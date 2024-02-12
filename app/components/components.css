@@ -1,9 +1,3 @@
-.allWeather {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 25vh;
-}
 
 .temp {
     display: flex;

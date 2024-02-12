@@ -6,9 +6,11 @@ html {
     font-family: cursive;
 }
 
-header {
-    margin: 0;
-    width: 100%;
+.centerPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25vh;
 }
 
 .decor {

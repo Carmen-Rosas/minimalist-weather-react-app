@@ -6,15 +6,15 @@ interface FetchData {
   weather: Weather | null; 
 }
 
-export function useFetch(): FetchData {
+export function useFetch(city: string, country:string): FetchData {
     const [data, setData] = useState(null);
     const API_KEY = "233d09b0524bb9203467de305600f28b";
 
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=New%20York&units=metric&appid=${API_KEY}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${API_KEY}`)
             .then(response => response.json())
             .then((data) => setData(data));
-    }, []);
+    }, [city]);
 
     return {
         weather: data

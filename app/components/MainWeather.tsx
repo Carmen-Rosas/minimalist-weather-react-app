@@ -47,7 +47,7 @@ export function MainWeather({ weather }: WeatherProps) {
   }
 
   return (
-    <div className="allWeather">
+    <div>
       <div className="weather">
         <img className="weatherImage" src={weatherImage} alt={weather?.weather[0].main}/>
         <span>({weather?.weather[0].description})</span>
