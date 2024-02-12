@@ -1,5 +1,16 @@
 html {
     background-color: rgb(240, 248, 255);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 0;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 1vh;
+    font-size: 2.5vh;
 }
 
 .pageContainer {
@@ -14,13 +25,13 @@ html {
 }
 
 .decor {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
 }
 
 .decor2 {
-    position: absolute;
+    position: fixed;
     right: 0;
     bottom: 0;
 }
