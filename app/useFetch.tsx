@@ -15,7 +15,7 @@ export function useFetch(): FetchData {
             .then(response => response.json())
             .then((data) => setData(data));
     }, []);
-    
+
     return {
         weather: data
     }

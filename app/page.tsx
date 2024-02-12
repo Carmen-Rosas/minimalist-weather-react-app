@@ -10,12 +10,13 @@ export default function Home() {
   console.log(data);
 
   return (
-    <main>
+    <div className="pageContainer">
       <div>
         <div>
           <MainWeather weather = {data?.weather}/>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
+{/* <a href="https://www.flaticon.com/free-icons/sunny" title="sunny icons">Sunny icons created by Freepik - Flaticon</a> */}
