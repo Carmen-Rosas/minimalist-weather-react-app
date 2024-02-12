@@ -21,6 +21,29 @@ export function MainWeather({ weather }: WeatherProps) {
     case "Snow":
       weatherImage = "/img/snow.png";
       break;
+    case "Dust":
+    case "Haze":
+    case "Sand":
+    case "Ash":
+    case "Smoke":
+      weatherImage = "/img/dust.png";
+      break;
+    case "Drizzle":
+      weatherImage = "/img/drizzle.png";
+      break;
+    case "Fog":
+    case "Mist":
+      weatherImage = "/img/fog.png";
+      break;
+    case "Thunderstorm":
+      weatherImage = "/img/thunder.png";	
+      break;
+    case "Squall":
+      weatherImage = "/img/squall.png";
+      break;
+    case "Tornado":
+      weatherImage = "/img/tornado.png";
+      break;
   }
 
   return (

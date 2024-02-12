@@ -1,3 +1,24 @@
+html {
+    background-color: rgb(240, 248, 255);
+}
+
 .pageContainer {
     font-family: cursive;
+}
+
+header {
+    margin: 0;
+    width: 100%;
+}
+
+.decor {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.decor2 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }

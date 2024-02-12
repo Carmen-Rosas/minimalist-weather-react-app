@@ -12,9 +12,11 @@ export default function Home() {
   return (
     <div className="pageContainer">
       <div>
+        <img className="decor" src="/img/decor-top.svg"/>
         <div>
           <MainWeather weather = {data?.weather}/>
         </div>
+        <img className="decor2" src="/img/decor-bottom.svg"/>
       </div>
     </div>
   );
