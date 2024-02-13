@@ -2,7 +2,7 @@
 import "./page.css";
 import "./components/components.css";
 import { useState } from "react";
-import { useFetch } from "./useFetch";
+import { useFetch } from "./hooks/useFetch";
 import { MainWeather } from "./components/MainWeather";
 import { Search } from "./components/Search";
 

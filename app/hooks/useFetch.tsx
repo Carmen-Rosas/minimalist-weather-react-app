@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Weather } from "./interfaces/Weather";
+import { Weather } from "../interfaces/Weather";
 
 
 interface FetchData {
