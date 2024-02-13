@@ -7,9 +7,10 @@ import { MainWeather } from "./components/MainWeather";
 import { Search } from "./components/Search";
 
 export default function Home() {
-  const data = useFetch("Málaga", "ES");
-
   const [hidden, setHidden] = useState(true);
+  const [value, setValue] = useState("");
+
+  const data = useFetch(value, "ES");
 
   return (
     <div className="pageContainer">
@@ -18,7 +19,7 @@ export default function Home() {
         <img className={`decorTopIni ${hidden ? "" : "hidden"}`} src="/img/decor-top-ini.svg" />
         <div className="centerPage">
           <MainWeather weather={data?.weather} hidden={hidden} setHidden={setHidden} />
-          <Search setHidden={setHidden} hidden={hidden} />
+          <Search setHidden={setHidden} hidden={hidden} value={value} setValue={setValue} />
         </div>
         <img className={`decorBottom ${hidden ? "hidden" : ""}`} src="/img/decor-bottom.svg" />
         <img className={`decorBottomIni ${hidden ? "" : "hidden"}`} src="/img/decor-bottom-ini.svg" />
