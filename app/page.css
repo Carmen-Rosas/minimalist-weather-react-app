@@ -1,3 +1,5 @@
+/* General styles */
+
 html {
     background-color: rgb(240, 248, 255);
     text-align: center;
@@ -13,6 +15,17 @@ h2 {
     font-size: 2.5vh;
 }
 
+button {
+    border-radius: 1vh;
+    font-family: inherit;
+    margin-top: 2vh;
+    border: none;
+    height: 4vh;
+    background-color: rgba(255, 228, 196, 0.66);
+    color: rgba(184, 134, 11, 0.76);
+    cursor: pointer;
+}
+
 .pageContainer {
     font-family: cursive;
 }
@@ -24,14 +37,47 @@ h2 {
     padding-top: 25vh;
 }
 
-.decor {
+.hidden {
+    opacity: 0;
+}
+
+/* Decor images styles */
+
+.decorTop,
+.decorBottom,
+.decorTopIni,
+.decorBottomIni {
+    transition: opacity 0.5s ease, margin 1.5s ease;
     position: fixed;
+}
+
+.decorTop {
     left: 0;
     top: 0;
 }
 
-.decor2 {
-    position: fixed;
+.decorTop.hidden,
+.decorBottomIni.hidden {
+    margin-left: -20vh;
+}
+
+.decorTopIni {
     right: 0;
+    top: 0;
+}
+
+.decorBottom {
+    right: 0;
+    bottom: 0;
+    margin-right: 0;
+}
+
+.decorBottom.hidden,
+.decorTopIni.hidden {
+    margin-right: -20vh;
+}
+
+.decorBottomIni {
+    left: 0;
     bottom: 0;
 }

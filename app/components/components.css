@@ -1,5 +1,17 @@
 /* MainWeather styles */
 
+.allWeather {
+    transition: opacity 0.3s ease, margin 1s ease;
+    position: fixed;
+    z-index: 1;
+}
+
+.allWeather.hidden {
+    margin-top: -10vh;
+    opacity: 0;
+    transition: opacity 0.3s ease, margin 1s ease;
+}
+
 .temp {
     display: flex;
     flex-direction: column;
@@ -27,16 +39,21 @@
 /* Search styles */
 
 .search {
-    display: flex;
-    flex-direction: column;
     padding-top: 13vh;
-    gap: 2vh;
-    align-items: center;
+    transition: opacity 1s ease;
+    position: fixed;
+    z-index: 2;
+}
+
+.search.hidden {
+    opacity: 0;
+    transition: opacity 0.2s ease;
 }
 
 .search h1 {
     font-weight: 100;
     color: rgb(162, 176, 255);
+    margin-bottom: 2vh;
 }
 
 .input {

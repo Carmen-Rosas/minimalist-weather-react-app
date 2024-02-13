@@ -2,9 +2,11 @@ import { Weather } from "../interfaces/Weather";
 
 interface WeatherProps {
   weather: Weather | null; 
+  hidden: boolean;
+  setHidden: (hidden: boolean) => void; 
 }
 
-export function MainWeather({ weather }: WeatherProps) {
+export function MainWeather({ weather, hidden, setHidden }: WeatherProps) {
 
   let weatherImage = "";
 
@@ -46,8 +48,12 @@ export function MainWeather({ weather }: WeatherProps) {
       break;
   }
 
+  function handleClick() {
+		setHidden(!hidden)
+	}
+
   return (
-    <div>
+    <div className={`allWeather ${hidden ? "hidden" : ""}`}>
       <div className="weather">
         <img className="weatherImage" src={weatherImage} alt={weather?.weather[0].main}/>
         <span>({weather?.weather[0].description})</span>
@@ -59,6 +65,7 @@ export function MainWeather({ weather }: WeatherProps) {
           <span>Humidity: {weather?.main.humidity}%</span>
           <span>Wind speed: {weather?.wind.speed}m/s</span>
         </div>
+      <button onClick={handleClick} hidden = {hidden}>Back</button>
       </div>
     </div>
   )
