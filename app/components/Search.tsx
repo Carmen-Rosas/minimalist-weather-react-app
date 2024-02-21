@@ -1,36 +1,32 @@
 import { useState } from "react";
+import { useFetchPlace } from "../hooks/useFetchPlace";
 
 interface SearchProps {
 	setHidden: (hidden: boolean) => void;
 	hidden: boolean;
-	setCity: (city: string) => void;
-	setCountry: (country: string) => void;
+	setLat: (city: string) => void;
+	setLon: (country: string) => void;
 }
 
-export function Search({ setHidden, hidden, setCity, setCountry }: SearchProps) {
+export function Search({ setHidden, hidden, setLat, setLon }: SearchProps) {
 
-	function handleSubmit(event: any) {
+	const [input, setInput] = useState("");
+	const place = useFetchPlace(input);
+
+	function handleSubmit(event: React.ChangeEvent<HTMLInputElement> ) {
 		event.preventDefault()
 		setHidden(!hidden)
 		try {
-			setCity(place?.results[0]?.city)
-			setCountry(place?.results[0]?.country_code)
+			let coords = event.target.value.split(",")
+			setLat(coords[0])
+			setLon(coords[1])
 		} catch (error) {
-			setCity("Madrid")
-			setCountry("ES")
+			alert("Please enter a valid city or postal code \nShowing current weather in Madrid, Spain")
 		}
 	}
 
-	const [place, setPlace] = useState("")
-
-	function handleChange(event: any) {
-		const API_KEY = "814c9da1704a433088cebfa6cc361d58"
-
-		fetch(`https://api.geoapify.com/v1/geocode/autocomplete?text=${event.target.value}&format=json&apiKey=${API_KEY}`)
-			.then(response => response.json())
-			.then((response) => setPlace(response));
-		
-		console.log(place)
+	function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+		setInput(event.target.value)
 	}
 
 	return (
@@ -43,9 +39,21 @@ export function Search({ setHidden, hidden, setCity, setCountry }: SearchProps) 
 					placeholder="City or postal code"
 					autoFocus={true}
 					disabled={!hidden}
+					minLength={3}
+					required
 					onChange={handleChange}
 				/>
-
+				<div>
+					{place?.place.results?.map((result) => (
+						<div key={result.place_id}>
+							<button 
+								onClick={handleSubmit} 
+								value={[result.lat, result.lon]}
+								hidden={!hidden}
+								>{result.formatted}</button>
+						</div>
+					))}
+				</div>
 			</form>
 
 		</div>
