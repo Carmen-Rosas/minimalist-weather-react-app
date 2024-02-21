@@ -4,7 +4,10 @@ Here's a preview:
 <img src="https://github.com/Carmen-Rosas/minimalist-weather-react-app/blob/master/public/img/demo.gif" width="600">
 
 ## Getting Started
-
+There are 2 ways to access this app, locally or via Vercel.
+### Vercel
+Just [clicking here](https://minimalist-weather-react-app.vercel.app/). CSS animations of the input box will not appear.
+### Local
 First clone this repository, then install dependencies:
 
 ```bash
