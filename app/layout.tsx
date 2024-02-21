@@ -18,6 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="shortcut icon" href="/img/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta charSet="UTF-8"/>
       </head>
       <body className={inter.className}>{children}</body>
     </html>
