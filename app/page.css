@@ -3,6 +3,7 @@
 html {
     background-color: rgb(240, 248, 255);
     text-align: center;
+    font-family: "Comic Sans MS", monospace;
 }
 
 h1 {
@@ -34,7 +35,7 @@ button {
 }
 
 .pageContainer {
-    font-family: "Comic Sans MS", cursive;
+    font-family: "Comic Sans MS", monospace;
 }
 
 .centerPage {
