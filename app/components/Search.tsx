@@ -1,19 +1,24 @@
 import { useState } from "react";
-import { CountrySelect } from "./CountrySelect";
 
 interface SearchProps {
 	setHidden: (hidden: boolean) => void;
 	hidden: boolean;
-	value: string;
-	setValue: (value: string) => void;
+	setCity: (city: string) => void;
+	setCountry: (country: string) => void;
 }
 
-export function Search({ setHidden, hidden, value, setValue }: SearchProps) {
+export function Search({ setHidden, hidden, setCity, setCountry }: SearchProps) {
 
 	function handleSubmit(event: any) {
 		event.preventDefault()
 		setHidden(!hidden)
-		setValue(place?.results[0]?.city)
+		try {
+			setCity(place?.results[0]?.city)
+			setCountry(place?.results[0]?.country_code)
+		} catch (error) {
+			setCity("Madrid")
+			setCountry("ES")
+		}
 	}
 
 	const [place, setPlace] = useState("")
@@ -32,7 +37,6 @@ export function Search({ setHidden, hidden, value, setValue }: SearchProps) {
 		<div className={`search ${hidden ? "" : "hidden"}`}>
 			<h1>CURRENT WEATHER</h1>
 			<form onSubmit={handleSubmit}>
-				<CountrySelect />
 				<input
 					className="input"
 					type="text"

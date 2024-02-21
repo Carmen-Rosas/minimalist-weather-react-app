@@ -14,7 +14,7 @@ export function useFetch(city: string, country:string): FetchData {
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${API_KEY}`)
             .then(response => response.json())
             .then((data) => setData(data));
-    }, [city]);
+    }, [city, country]);
 
     return {
         weather: data

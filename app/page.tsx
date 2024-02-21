@@ -8,9 +8,10 @@ import { Search } from "./components/Search";
 
 export default function Home() {
   const [hidden, setHidden] = useState(true);
-  const [value, setValue] = useState("");
+  const [city, setCity] = useState("Madrid");
+  const [country, setCountry] = useState("ES");
 
-  const data = useFetch(value, "ES");
+  const data = useFetch(city, country);
 
   return (
     <div className="pageContainer">
@@ -19,7 +20,7 @@ export default function Home() {
         <img className={`decorTopIni ${hidden ? "" : "hidden"}`} src="/img/decor-top-ini.svg" />
         <div className="centerPage">
           <MainWeather weather={data?.weather} hidden={hidden} setHidden={setHidden} />
-          <Search setHidden={setHidden} hidden={hidden} value={value} setValue={setValue} />
+          <Search setHidden={setHidden} hidden={hidden} setCity={setCity} setCountry= {setCountry} />
         </div>
         <img className={`decorBottom ${hidden ? "hidden" : ""}`} src="/img/decor-bottom.svg" />
         <img className={`decorBottomIni ${hidden ? "" : "hidden"}`} src="/img/decor-bottom-ini.svg" />

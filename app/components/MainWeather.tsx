@@ -10,7 +10,7 @@ export function MainWeather({ weather, hidden, setHidden }: WeatherProps) {
 
   let weatherImage = "";
 
-  switch(weather?.weather[0].main) {
+  switch(weather?.weather[0]?.main) {
     case "Clouds":
       weatherImage = "/img/clouds.png";
       break;
@@ -45,6 +45,9 @@ export function MainWeather({ weather, hidden, setHidden }: WeatherProps) {
       break;
     case "Tornado":
       weatherImage = "/img/tornado.png";
+      break;
+    default:
+      weatherImage = "/img/clear.png";
       break;
   }
 
