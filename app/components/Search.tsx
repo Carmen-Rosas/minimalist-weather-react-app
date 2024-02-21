@@ -13,7 +13,7 @@ export function Search({ setHidden, hidden, setLat, setLon }: SearchProps) {
 	const [input, setInput] = useState("");
 	const place = useFetchPlace(input);
 
-	function handleSubmit(event: React.ChangeEvent<HTMLInputElement> ) {
+	function handleSubmit(event: any ) {
 		event.preventDefault()
 		setHidden(!hidden)
 		try {
